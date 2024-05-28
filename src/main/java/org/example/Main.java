@@ -6,7 +6,6 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
         convertSgtins();
     }
 
@@ -19,12 +18,8 @@ public class Main {
             while (br.ready()){
                 String rawLine = br.readLine();
                 if (rawLine.startsWith("01")){
-                    System.out.println(rawLine.indexOf("01"));
                     rawLine = rawLine.substring(2, 33);
-                    System.out.println(rawLine);
                 }
-                System.out.println(rawLine);
-                System.out.println(rawLine.substring(14,16));
                 String sgtin = rawLine.substring(0, 14) + rawLine.substring(16, 29);
                 last3chars.add(sgtin.substring(24, 27));
                 gtins.add(sgtin);
